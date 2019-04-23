@@ -46,7 +46,11 @@ return [
             'provider' => 'users',
             'hash' => false,
         ],
-    ],
+        'student' => [
+            'driver' => 'session',
+            'provider' => 'students',
+        ],
+
 
     /*
     |--------------------------------------------------------------------------
@@ -66,10 +70,13 @@ return [
     */
 
     'providers' => [
-        'users' => [
+        'students' => [
             'driver' => 'eloquent',
-            'model' => App\User::class,
+            'model' => App\Student::class,
         ],
+      ],
+
+
 
         // 'users' => [
         //     'driver' => 'database',
@@ -93,8 +100,8 @@ return [
     */
 
     'passwords' => [
-        'users' => [
-            'provider' => 'users',
+        'students' => [
+            'provider' => 'students',
             'table' => 'password_resets',
             'expire' => 60,
         ],
